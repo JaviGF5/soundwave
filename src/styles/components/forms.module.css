@@ -1,0 +1,80 @@
+/* Formularios */
+
+
+.inputContent {
+    margin-top: 13px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.input, .button {
+    width: 350px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    letter-spacing: var(--font-space-title);
+    word-spacing: 2px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.input {
+    width: 100%;
+    background-color: var(--basic-three);
+    font-family: var(--font-family-text);
+    color: var(--font-color-two);
+    opacity: 0.8;
+}
+    .input:focus {
+        box-shadow: 0px 0px 7px 5px var(--basic-three);
+        opacity: 1;
+    }
+
+.button {  
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid var(--basic-three);
+    font-family: var(--font-family-title);
+    color: var(--font-color-one);
+    border-radius: 5px;
+}
+    .button:hover {
+        /* box-shadow: 0px 0px 10px 5px var(--basic-two); */
+        color: var(--background-one);
+        /* border: 1px solid var(--basic-two); */
+        background-color: var(--basic-three);
+        transition: 0.5s;
+    }
+
+.iconContent {
+    position: absolute;    
+    width: 25px;
+    margin-right: 10px;
+    margin-top: -8px;
+    opacity: 0.5;
+}
+    .iconContent:hover {
+         opacity: 0.8;
+    }
+
+.error {
+    margin: 0;
+    padding-left: 16px;
+    font-family: var(--font-family-text);
+    font-size: 13px;
+    color: var(--error-color);
+}
+
+.dropdown {
+    margin-bottom: 4px;
+    width: 100%;
+}
+    .dropdown:focus {
+        box-shadow: 0px 0px 0px 0px transparent;
+    }

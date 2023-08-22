@@ -1,0 +1,27 @@
+@import '../../../styles/';
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.playerIcon {
+    height: 30px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+    .playerIcon:hover {
+        filter: drop-shadow(0px 0px 10px var(--basic-two));
+        opacity: 0.8;
+    }
+
+/* .progressBar {
+    width: 100%;
+    max-width: 500px;
+    height: 7px;
+} */
+
+

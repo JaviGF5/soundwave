@@ -1,0 +1,43 @@
+@import '../../styles/';
+
+
+.content {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.perfil {
+    float: left;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+
+
+.update {
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: none;
+    box-sizing: border-box;
+    font-family: var(--font-family-title);
+    color: var(--font-color-one);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    background-color: transparent;
+    box-shadow: 0px 0px 20px -10px var(--basic-three);
+    border-radius: 5px;
+    border: 1px solid var(--basic-three);
+    transition: 0.5s;
+}
+
+    .update:hover {
+        text-shadow: 0px 0px 10px var(--basic-two);
+        border: 1px solid var(--basic-two);
+        box-shadow: 0px 0px 15px -3px var(--basic-two);
+    }

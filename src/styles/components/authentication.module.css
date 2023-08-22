@@ -1,0 +1,49 @@
+/* Sitema de autenticación */
+
+.cards {
+    display: grid;
+    place-items: center;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: var(--font-color-one);
+    font-family: "neutra-book";
+    font-size: 30px;
+}
+
+.button {
+    width: 100%;
+    padding: 13px;
+    box-sizing: border-box;
+
+    font-family: var(--font-family-title);
+    color: var(--font-color-one);
+    text-transform: uppercase;
+    letter-spacing: var(--font-space-title);
+    font-size: 14px;
+    
+    background-color: transparent;
+    box-shadow: 0px 0px 20px -10px var(--basic-three);
+    border-radius: 5px;
+    border: 1px solid var(--basic-three);
+    transition: 0.5s;
+}
+    .button:hover {
+        text-shadow: 0px 0px 10px var(--basic-two);
+        border: 1px solid var(--basic-two);
+        box-shadow: 0px 0px 15px -3px var(--basic-two);
+    }
+  
+
+
+
+
+
+
+
+
+
+

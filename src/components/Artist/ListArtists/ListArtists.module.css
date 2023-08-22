@@ -1,0 +1,36 @@
+@import '../../../styles/';
+
+.gridContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 6%;
+   
+}
+
+.artist {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: var(--font-family-title);
+    color: var(--basic-three);  
+    transition: 0.5s;  
+    /* cursor: auto; */
+}
+    .artist:hover {
+        opacity: 0.5;
+        filter: contrast(1.5);
+    } 
+
+
+
+.photo {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15%;
+}
+
+
+
+
+

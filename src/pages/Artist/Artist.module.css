@@ -1,0 +1,26 @@
+@import '../../styles/';
+
+
+.content {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+
+.secctionList {
+    display: flex;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    font-size: 30px;
+    /* border-bottom: 3px solid var(--background-two); */
+    letter-spacing: 2.5px;
+    font-family: var(--font-family-text);
+}
+
+
+

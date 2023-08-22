@@ -1,0 +1,50 @@
+@import '../../../styles/';
+
+
+.image {
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--background-one);
+    cursor: pointer;
+    transition: 0.5s;
+}
+    .image:hover {
+        opacity: 0.5;
+        background-color: transparent;
+    }
+
+.errorSong {
+    box-sizing: border-box;
+    border: 2px solid var(--error-color);
+    box-shadow: 0px 0px 10px var(--error-color) inset;
+}
+
+.noSongFile {
+    max-height: 45px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+
+.label {
+    font-family: var(--font-family-text);
+    letter-spacing: 0.5px;
+}
+
+.uploadText, 
+.songName {
+    font-family: var(--font-family-text);
+    margin: 0;
+}
+
+.songName {
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    font-family: var(--font-family-title);
+    font-size: 17px;
+    letter-spacing: 1px;
+}

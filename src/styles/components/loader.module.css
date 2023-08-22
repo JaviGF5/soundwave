@@ -1,0 +1,33 @@
+/* Icono de carga */
+
+.text {
+    position: absolute;
+    top: calc(30vh + 65px);
+    left: calc(50% + 65px);
+}
+
+.loadingIcon {
+    position: absolute;
+    top: calc(30vh + 65px);
+    left: calc(50% + 65px);
+    width: 65px;
+    height: 65px;
+    border: 6px solid transparent;
+    border-top: 3px solid var(--basic-three);
+    border-bottom: 3px solid var(--basic-three);
+    border-left: 3px solid var(--background-two); 
+    border-right: 3px solid var(--background-two); 
+    box-shadow: 0px 0px 5px -5px var(--basic-three);
+    border-radius: 50%;
+    animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

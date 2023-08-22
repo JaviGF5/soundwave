@@ -1,0 +1,11 @@
+@import '../../../styles';
+
+.contentButton {
+    width: 100%;
+    gap: 20px;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    
+}
