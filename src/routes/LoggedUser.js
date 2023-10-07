@@ -3,17 +3,15 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Home, Album, Albums, Artist, Artists, Profile } from '../pages';
 import { LoggedLayout } from '../layouts';
 
-// Navegación para usuarios loggeados
+// Open Session Navigation
 export function LoggedUser() {
   
+  // Create or redirect links, using 'react-router-dom'
   return (
-    
-    // Uso de React Router -> crear enlaces o redirigir sin hacer nuevas peticiones al servidor
-    <div>
     <BrowserRouter>
       <LoggedLayout>
-      <Routes>
-        
+
+        <Routes>
           <Route path="/" element={ <Home /> } />
 
           <Route path="/albums" element={ <Albums /> } />
@@ -23,10 +21,9 @@ export function LoggedUser() {
           <Route path="/artists/:id" element={ <Artist /> } />
 
           <Route path="/profile" element={ <Profile /> } />
-
         </Routes>
+        
       </LoggedLayout>
     </BrowserRouter>
-    </div>
   )
 };

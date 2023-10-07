@@ -1,4 +1,4 @@
-/* Icono de carga */
+/* Loader Icon */
 
 .text {
     position: absolute;
@@ -22,11 +22,11 @@
     animation: spin 1.8s linear infinite;
 }
 
+/* Animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }

@@ -5,14 +5,15 @@ import styles from './ListAlbums.module.css';
 import loaderStyles from '../../../styles/components/loader.module.css';
 import { albumIcon } from '../../../assets';
 
+
 export function ListAlbums(props) {
 
-  // Animación de carga
+  // Loader Animation
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
       setTimeout(() => {
-      setLoading(false);
+        setLoading(false);
       }, 2700);
   }, []);
 
@@ -27,20 +28,30 @@ export function ListAlbums(props) {
     )
   };
 
+  
   return (
-    <div className={ styles.gridContent }>
+    <div className={ styles.content }>
       {
-        map(props.albums, (album) => (
-            <Link  className={ styles.album } key={ album.id } to={`/albums/${ album.id }`}  > 
-                <div className={ styles.photo } style={ {backgroundImage: `url(${ album.image })`} } />
-                <div className={ styles.nameContent }>
-                  <img src={ albumIcon } alt='Álbum' className={ styles.icon }/>
-                  <p>{ album.name }</p>
-                </div>
-                
-            </Link>
+        props.albums.slice(0, 80).map( (album) => (
+
+          <Link 
+            className={ styles.album } 
+            key={ album.id } 
+            to={ `/albums/${ album.id }` }  
+          > 
+            <div className={ styles.image } style={{ backgroundImage: `url(${ album.image })` }} />
+
+            <div className={ styles.name }>
+
+              <img src={ albumIcon } alt='Álbum' className={ styles.icon }/>
+              <p> { album.name } </p>
+
+            </div>
+          </Link>
+
         ))
       }
+      <br/><br/><br/>
     </div> 
   )
 }

@@ -1,6 +1,11 @@
 @import '../../../styles/';
 
 
+.uploadFile {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
 .image {
     display: grid;
     place-items: center;
@@ -10,40 +15,18 @@
     background-color: var(--background-one);
     cursor: pointer;
     transition: 0.5s;
-}
-    .image:hover {
+
+    &:hover {
         opacity: 0.5;
         background-color: transparent;
     }
-
-.errorSong {
-    box-sizing: border-box;
-    border: 2px solid var(--error-color);
-    box-shadow: 0px 0px 10px var(--error-color) inset;
-}
-
-.noSongFile {
-    max-height: 45px;
-    margin-bottom: 20px;
-    opacity: 0.6;
-}
-
-
-.label {
-    font-family: var(--font-family-text);
-    letter-spacing: 0.5px;
-}
-
-.uploadText, 
-.songName {
-    font-family: var(--font-family-text);
-    margin: 0;
 }
 
 .songName {
     display: flex;
     justify-content: center;
-    padding-top: 6px;
+    margin: 0;
+    margin-top: 5px;
     font-family: var(--font-family-title);
     font-size: 17px;
     letter-spacing: 1px;

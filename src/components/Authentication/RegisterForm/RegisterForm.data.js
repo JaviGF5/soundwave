@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+
 export function initialValues() {
     return {
         username: "",
@@ -26,7 +27,6 @@ export function validationSchema() {
             .matches(/[0-9]/, "*Se requiere al menos un número")
             .matches(/[A-Za-z]/, "*Se requiere al menos una letra")
             .required("*Campo obligatorio"),
-        
     })
 }
 

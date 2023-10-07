@@ -7,11 +7,16 @@ import './utils/firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // ELIMINAR - COMENTAR  React.StrictMode PARA EVITAR DOBLE RENDERIZADO
-  // <React.StrictMode>
-    <App />
-  // </React.StrictMode>
-);
 
+  // WARNING - <React.StrictMode> for development only, double rendering.
+  /* 
+  <React.StrictMode>
+      <App />
+  </React.StrictMode> 
+  */
+
+  <App />
+
+);
 
 reportWebVitals();

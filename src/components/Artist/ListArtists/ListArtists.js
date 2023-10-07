@@ -7,7 +7,7 @@ import loaderStyles from '../../../styles/components/loader.module.css';
 
 export function ListArtists(props) {
 
-  // Animación de carga
+  // Loader Animation
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,12 +27,17 @@ export function ListArtists(props) {
     )
   };
 
+
   return (
-    <div className={ styles.gridContent }>
+    <div className={ styles.content }>
       {
-        map(props.artists, (artist) => (
-          <Link  className={ styles.artist } key={ artist.id } to={`/artists/${ artist.id }`}  > 
-            <div className={ styles.photo} style={ {backgroundImage: `url(${ artist.image })`} } />
+        props.artists.slice(0, 80).map( (artist) => (
+          <Link  
+            className={ styles.artist } 
+            key={ artist.id } 
+            to={`/artists/${ artist.id }`}  
+          > 
+            <div className={ styles.image } style={{ backgroundImage: `url(${ artist.image })` }} />
             <p>{ artist.name }</p>
           </Link>
         ))

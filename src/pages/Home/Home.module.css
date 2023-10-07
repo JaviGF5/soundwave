@@ -2,91 +2,129 @@
 
 
 .content {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 
+    .contentItem {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10%;
 
-/*     
-    width: 100%;
-    height: 100%; */
-    
-    /* background-image: url('../../assets/img/soundwave-logo-white.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
+        .logo {
+            width: 20%;
+            min-width: 200px;
+            transition: 2s;
+            filter: drop-shadow(0px 0px 0px var(--basic-two));
+            animation: animateLogo 6s linear infinite;
 
- 
-}
+            &:hover {
+                animation: animateLogo 2s linear infinite;
+            }
+        }
 
-.contentItem {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 6%;
-}
+        .button {
+            width: 200px;
+            padding: 13px;
+            box-sizing: border-box;
+            font-family: var(--font-family-title);
+            color: var(--font-color-one);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-spacing: 3px;
+            font-size: 14px;
+            background-color: transparent;
+            box-shadow: 0px 0px 20px -10px var(--basic-three);
+            border-radius: 5px;
+            border: 1px solid var(--basic-three);
+            transition: 0.5s;
 
-.button {
-    width: 200px;
-    padding: 13px;
-    box-sizing: border-box;
-    font-family: var(--font-family-title);
-    color: var(--font-color-one);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    word-spacing: 3px;
-    font-size: 14px;
-    background-color: transparent;
-    box-shadow: 0px 0px 20px -10px var(--basic-three);
-    border-radius: 5px;
-    border: 1px solid var(--basic-three);
-    transition: 0.5s;
-}
-    .button:hover {
-        text-shadow: 0px 0px 10px var(--basic-two);
-        border: 1px solid var(--basic-two);
-        box-shadow: 0px 0px 15px -3px var(--basic-two);
+            &:hover {
+                text-shadow: 0px 0px 10px var(--basic-two);
+                border: 1px solid var(--basic-two);
+                box-shadow: 0px 0px 15px -3px var(--basic-two);
+            }
+
+            &::before {
+                content: "CERRAR SESIÓN";
+            }
+
+            &:hover::before {
+                content: "¡HASTA PRONTO!";
+            }
+        }
     }
 
-.logo {
-    /* width: 15%; */
-    width: 200px;
-    transition: 2s;
-    filter: drop-shadow(0px 0px 0px var(--basic-two));
-    animation: animateLogo 4s linear infinite;
-     
-}
-    .logo:hover {
-        animation: animateLogo 1.5s linear infinite;
+    .secctionTitle {
+        display: flex;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 11%;
+        margin-bottom: 2%;
+        font-size: 26px;
+        letter-spacing: 2px;
+        font-family: var(--font-family-text);   
     }
 
+    .gridContent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1%;
+        padding-left: 1%;
+        padding-right: 1%;
 
-.secctionList {
-    display: flex;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    margin-top: 11%;
-    margin-bottom: 2%;
-    font-size: 18px;
-    text-transform: uppercase;
-    /* border-bottom: 3px solid var(--background-two); */
-    letter-spacing: 2px;
-    font-family: var(--font-family-text);
+        .gridItem {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: var(--font-family-title);
+            color: var(--basic-three);
+            transition: 0.5s;
+            padding-bottom: 20%;
+
+            &:hover {
+                opacity: 0.5;
+                filter: contrast(1.5);
+            }
+
+            .gridImage {
+                width: 100%;
+                height: 30vh;
+                background-position: center;
+                background-size: cover;
+                border-radius: 10%;
+            }
+
+            .nameGrid {
+                display: flex;
+                align-items: start;
+                margin-top: 10px;
+
+                & p {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 17px;
+                }
+
+                .iconGrid {
+                    width: 13px;
+                    margin-top: 3px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }
 
 
-
+/* Animation */
 @keyframes animateLogo {
     0% {
         filter: drop-shadow(0px 0px 17px var(--basic-three));
     }
-
     50% {
         filter: drop-shadow(0px 0px 17px var(--basic-two));
     }
-
     75% {
         filter: drop-shadow(0px 0px 17px var(--basic-one));
     }
@@ -94,3 +132,23 @@
         filter: drop-shadow(0px 0px 17px var(--basic-three));
     }
 }
+
+
+
+/* Responsive > 1024 */
+@media screen and (max-width: 1024px) {
+
+.content {
+    
+    .gridContent {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5%;
+    }
+}
+
+}
+
+
+
+
+

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Album.module.css';
-import { Album as AlbumControl, Song } from '../../api';
 import { useParams } from 'react-router-dom';
 import { InfoAlbum } from '../../components/Album';
 import { ListSongs } from '../../components/Song';
+import { Album as AlbumControl, Song } from '../../api';
+import styles from './Album.module.css';
 
 
 const albumControl = new AlbumControl();
@@ -13,9 +13,9 @@ export function Album() {
  
   const { id } = useParams();
 
+  // Load Album Info
   const [album, setAlbum] = useState(null);
-  const [songs, setSongs] = useState(null);
-   
+
   useEffect(() => {
     (async () => {
       try {
@@ -27,7 +27,9 @@ export function Album() {
     }) ()
   }, [id]);
   
-  // Cargar las canciones del albúm
+  // Load Album Songs
+  const [songs, setSongs] = useState(null);
+
   useEffect(() => {
     (async () => {
       try {
@@ -39,15 +41,16 @@ export function Album() {
     }) ()
   }, [id]);
 
-
-
   if (!album) return null;
   if (!songs) return null;
 
+  
   return (
-    <div className={ styles.content }> 
+    <div className={ styles.content }>
+
       <InfoAlbum album={ album } />
       <ListSongs songs={ songs } songImage={ album.image } />
+
     </div>
   )
 }

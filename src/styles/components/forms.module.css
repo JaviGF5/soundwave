@@ -1,5 +1,4 @@
-/* Formularios */
-
+/* Forms */
 
 .inputContent {
     margin-top: 13px;
@@ -10,18 +9,19 @@
     flex-direction: column;
 }
 
-.input, .button {
+.input, 
+.button {
     width: 350px;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 15px;
     padding-right: 15px;
     border: none;
-    letter-spacing: var(--font-space-title);
+    letter-spacing: 1.5px;
     word-spacing: 2px;
     font-size: 15px;
     border-radius: 5px;
-    transition: 0.4s;
+    transition: 0.4s; 
 }
 
 .input {
@@ -30,11 +30,12 @@
     font-family: var(--font-family-text);
     color: var(--font-color-two);
     opacity: 0.8;
-}
-    .input:focus {
-        box-shadow: 0px 0px 7px 5px var(--basic-three);
+
+    &:focus {
+        box-shadow: 0px 0px 8px 0px var(--basic-three);
         opacity: 1;
     }
+}
 
 .button {  
     margin-top: 20px;
@@ -43,14 +44,13 @@
     font-family: var(--font-family-title);
     color: var(--font-color-one);
     border-radius: 5px;
-}
-    .button:hover {
-        /* box-shadow: 0px 0px 10px 5px var(--basic-two); */
+    transition: 0.5s;
+
+    &:hover {    
         color: var(--background-one);
-        /* border: 1px solid var(--basic-two); */
-        background-color: var(--basic-three);
-        transition: 0.5s;
+        background-color: var(--basic-three);  
     }
+}
 
 .iconContent {
     position: absolute;    
@@ -58,10 +58,31 @@
     margin-right: 10px;
     margin-top: -8px;
     opacity: 0.5;
-}
-    .iconContent:hover {
-         opacity: 0.8;
+
+    &:hover {
+        opacity: 0.8;
     }
+}
+
+.dropdown {
+    margin-bottom: 4px;
+    width: 100%;
+
+    &:focus {
+       box-shadow: 0px 0px 0px 0px transparent; 
+    }
+}
+
+.uploadText {
+    font-family: var(--font-family-text);
+    padding: 0;
+    margin: 0;
+}
+
+.label {
+    font-family: var(--font-family-text);
+    letter-spacing: 0.5px;
+}
 
 .error {
     margin: 0;
@@ -71,10 +92,8 @@
     color: var(--error-color);
 }
 
-.dropdown {
-    margin-bottom: 4px;
-    width: 100%;
+.errorImage {
+    box-sizing: border-box;
+    border: 2px solid var(--error-color);
+    box-shadow: 0px 0px 10px var(--error-color) inset;
 }
-    .dropdown:focus {
-        box-shadow: 0px 0px 0px 0px transparent;
-    }

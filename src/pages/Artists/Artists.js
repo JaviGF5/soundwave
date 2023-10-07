@@ -8,9 +8,9 @@ const artistControl = new Artist();
 
 export function Artists() {
 
+  // Load Artists
   const [artists, setArtists] = useState([]);
 
-  // Cargar artistas
   useEffect(() => {
     (async () => {
       try {
@@ -22,10 +22,11 @@ export function Artists() {
     }) ()
   }, []);
   
+  
   return (
     <div className={ styles.content }>
 
-      <h1>Artistas</h1>
+      <h2 className={ styles.title }> Artistas </h2>
       <ListArtists artists={ artists } />
       
     </div>

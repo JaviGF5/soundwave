@@ -1,0 +1,75 @@
+@import '../../../styles/';
+
+
+.button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--background-one);
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    font-family: var(--font-family-title);
+    color: var(--basic-three);
+    box-shadow:
+        0px 0px 0px -5px var(--basic-three),
+        0px 0px 0px var(--basic-three) inset;
+    animation: animateButton 6s linear infinite;
+    transition: 0.7s;
+
+    &:hover {
+        background-color: var(--basic-three);
+        color: var(--background-one);
+        opacity: 0.8;
+    }
+
+}
+
+.message {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: var(--font-family-text);
+    color: var(--basic-three);
+
+    .auth {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-weight: 700; 
+        /* background-color: aqua; */
+    }
+
+    & h4 {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+
+
+/* Animation */
+@keyframes animateButton {
+    0% {
+        box-shadow: 
+            0px 0px 10px -5px var(--basic-three),
+            0px 0px 6px var(--basic-three) inset;
+    }
+    50% {
+        box-shadow: 
+            0px 0px 20px var(--basic-two),
+            0px 0px 6px var(--basic-two) inset;
+    }
+    75% {
+        box-shadow:
+            0px 0px 20px -5px var(--basic-one),
+            0px 0px 6px var(--basic-one) inset;
+    }
+    100% {
+        box-shadow:
+            0px 0px 10px -5px var(--basic-three),
+            0px 0px 6px var(--basic-three) inset;
+    }
+}
+
+
+

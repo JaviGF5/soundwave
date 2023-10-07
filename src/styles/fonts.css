@@ -1,4 +1,4 @@
-/* Fuentes Globales */
+/* Global Fonts */
 
 @font-face {
     font-family: "neutra-book";
@@ -10,21 +10,7 @@
     src: url("../assets/fonts/NeutraTextBold.otf");
 }
 
-@font-face {
-    font-family: "neutra-light";
-    src: url("../assets/fonts/NeutraTextLight.otf");
-}
-
-
 :root {
-
-    /* Títulos */
     --font-family-title: "neutra-blod";
-    --font-size-title: 30px;
-    --font-space-title: 1.5px;
-
-    /* Textos */
     --font-family-text: "neutra-book";
-    --font-size-text: 1.5px;
-    
 }

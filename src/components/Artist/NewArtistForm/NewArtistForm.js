@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useFormik } from 'formik';
+import { useDropzone } from 'react-dropzone';
+import classNames from 'classnames';
+import { initialValues, validationSchema } from './NewArtistForm.data';
+import { Artist, Storage } from '../../../api';
 import styles from './NewArtistForm.module.css';
 import formsStyles from '../../../styles/components/forms.module.css';
 import { errorImage } from '../../../assets';
-import classNames from 'classnames';
-import { useFormik } from 'formik';
-import { useDropzone } from 'react-dropzone';
-import { initialValues, validationSchema } from './NewArtistForm.data';
-import { Artist, Storage } from '../../../api';
-import { v4 as uuidv4 } from 'uuid';
 
 
 const storageControl = new Storage();
@@ -15,30 +15,28 @@ const artistControl = new Artist();
 
 export  function NewArtistForm(props) {
 
+    // Form, Check and Upload
     const formik = useFormik({
+        // Using 'Yup' to validate Form
         initialValues: initialValues(),
         validationSchema: validationSchema(),
         validateOnChange: false,
+        // Submit Form Controller
         onSubmit: async (formValues) => {
             try {
-                // Cargar datos y facilitar su uso
                 const { file, name } = formValues;
-                // Subir imagen al storage en la carpeta "artist" y con su id correspondiente
+                // Firebase Storage Folder "artist"
                 const response = await storageControl.uploadFile(file, "artist", uuidv4());
-
-                // Obtener URL
                 const url = await storageControl.getUrlFile(response.metadata.fullPath);
                 await artistControl.create(url, name);
-
                 props.closeModal();
-                
             } catch (error) {
                 console.error(error);
             }
         }
     })
 
-    // Cargar Imagen
+    // Load Form Image
     const [photo, setPhoto] = useState(null);
 
     const onDrop = useCallback(async (acceptedFile) => {
@@ -49,26 +47,27 @@ export  function NewArtistForm(props) {
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-
+    
     return (
         <form onSubmit= { formik.handleSubmit }>
 
             <div 
                 className={ classNames( styles.image,
-                    { [ styles.errorImage ] : formik.errors.file, }
+                    { [ formsStyles.errorImage ] : formik.errors.file, }
                 ) } 
                 { ...getRootProps() }
             >
                 <input { ...getInputProps() }/>
                 <img 
-                    src={ photo || errorImage } 
                     className={ classNames ( styles.noPhoto, 
                         { [ styles.photo ] : photo }
                     )} 
+                    src={ photo || errorImage } 
                     alt="Foto de usuario"
                 />
-                <p className={ styles.uploadImage }> Haz click o arrastra una imagen </p>
+                <p className={ formsStyles.uploadText }> Haz click o arrastra una imagen </p>
             </div>
+
 
             <div className={ formsStyles.inputContent }>
                 <input 
@@ -87,6 +86,7 @@ export  function NewArtistForm(props) {
                     <p className={ formsStyles.error }> { formik.errors.name } </p> : 
                     null 
                 }
+
 
             <button className={ formsStyles.button } type="submit">
                 REGISTRAR ARTISTA

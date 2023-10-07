@@ -4,53 +4,41 @@
 .content{
     display: flex;
     align-items: start;
-}
 
-.albumImage {
-    width: 25%;
-    min-width: 170px;
-}
-
-
-
-.banner {
-    display: flex;
-    align-items: end;
-    width: calc(100vw - var(--left-bar-with));
-    height: 60vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: calc(0.5 * var(--left-bar-with));
-    /* filter: grayscale(100%); */
-    opacity: 0.5;
-
-}
-
-
-
-.textContent {
-    padding-left: 5%;
-    
-}
-
-.textAlbum {
-    font-size: 50px;
-    letter-spacing: 1px;
-    cursor: auto;
-    margin-block-start: 10px;
-    margin-block-end: 15px;
-}
-
-.textArtist {
-    text-decoration: none;
-    color: var(--basic-three);
-    font-size: 20px;
-    border-bottom: 3px solid var(--background-two);
-    transition: 0.5s;
-
-}
-
-    .textArtist:hover {
-        opacity: 0.5;
+    .albumImage {
+        width: 25%;
+        min-width: 170px;
     }
+
+    .textContent {
+        padding-left: 5%; 
+        
+        .textAlbum {
+            font-size: 50px;
+            letter-spacing: 1px;
+            cursor: auto;
+            margin-block-start: 10px;
+            margin-block-end: 15px;
+            cursor: default;
+        }
+
+        .textArtist {
+            text-decoration: none;
+            color: var(--basic-three);
+            font-size: 20px;
+            border-bottom: 3px solid var(--background-two);
+            transition: 0.5s; 
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

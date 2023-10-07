@@ -1,33 +1,43 @@
 @import '../../../styles/';
 
-.gridContent {
+
+.content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 6%;
-   
+    padding-bottom: 200px;
+
+    .artist {
+        text-decoration: none;
+        font-size: 18px;
+        font-family: var(--font-family-title);
+        color: var(--basic-three);  
+        transition: 0.5s;  
+
+        &:hover {
+            opacity: 0.5;
+            filter: contrast(1.5);
+        }
+
+        .image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-position: center;
+            background-size: cover;
+            border-radius: 15%;
+        }       
+    }    
 }
 
-.artist {
-    text-decoration: none;
-    font-size: 18px;
-    font-family: var(--font-family-title);
-    color: var(--basic-three);  
-    transition: 0.5s;  
-    /* cursor: auto; */
-}
-    .artist:hover {
-        opacity: 0.5;
-        filter: contrast(1.5);
-    } 
 
 
+/* Responsive > 1024 */
+@media screen and (max-width: 1024px) {
 
-.photo {
-    width: 100%;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 15%;
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 

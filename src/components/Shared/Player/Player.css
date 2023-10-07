@@ -1,0 +1,69 @@
+@import '../../../styles/';
+
+
+/* Library Styles 'react-h5-audio-player' */
+.rhap_container {
+    background-color: transparent !important;
+
+    & svg {
+        color: var(--basic-three) !important;
+        transition: 0.5s;
+    
+        &:hover {
+            color: #fff !important;
+            filter: drop-shadow(0px 0px 3px var(--basic-two));
+        }
+    }
+
+    .rhap_time {
+        color: var(--font-color-one) !important;
+        font-family: Helvetica;
+        font-size: small;
+        letter-spacing: 1px;
+        
+    }
+
+    .rhap_controls-section {
+        margin-top: 2px !important;
+            
+        .rhap_volume-container {
+            flex: 0 1 150px !important;
+
+            .rhap_volume-bar:hover {
+                filter: drop-shadow(0px 0px 2px var(--basic-two));
+            }
+
+            .rhap_volume-indicator {
+                background: #fff;
+                filter: drop-shadow(0px 0px 2px var(--basic-two));
+            }
+        }
+    }
+
+    .rhap_progress-filled,
+    .rhap_progress-indicator {
+        background-color: var(--basic-three) !important;
+
+        &:hover {
+            filter: drop-shadow(0px 0px 2px var(--basic-two));
+        }
+    }
+
+    .rhap_download-progress {
+        background-color: #777 !important;
+
+        &:hover {
+        filter: drop-shadow(0px 0px 2px var(--basic-two));
+        }
+    }
+}
+
+
+
+
+
+    
+
+
+
+

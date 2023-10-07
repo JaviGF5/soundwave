@@ -1,13 +1,12 @@
 const electron = require("electron");             
 const app = electron.app;                         
 const BrowserWindow = electron.BrowserWindow;     
-
 const path = require("path");                     
-const isDev = require("electron-is-dev");         
+const isDev = require("electron-is-dev");  
 
 let mainWindow;   
                                 
-// Crea la ventana de la app
+// Desktop Window
 function createWindow() {                         
   mainWindow = new BrowserWindow({                
     width: 1500,
@@ -18,15 +17,15 @@ function createWindow() {
     titleBarStyle: "hiddenInset",
   });
 
-  // Cargar nuestra app de React
+  // Load APP
   mainWindow.loadURL(            
-    // En desarrollo -> Carga localhost:3000. Si no, nuestra app compilada                 
+    // localhost:3000 - or - Compiled Application               
     isDev                                         
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../build/index.html")}`     
   );
 
-  // Activa inspector de elementos y otras herramientas
+  // Only for development -> Element inspector and others tools
   // if (isDev) mainWindow.webContents.openDevTools();     
 
   mainWindow.on("closed", () => (mainWindow = null));   

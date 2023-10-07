@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useFormik } from 'formik';
+import { useDropzone } from 'react-dropzone';
+import classNames from 'classnames';
+import { initialValues, validationSchema } from './NewSongForm.data';
+import { Album, Storage, Song } from '../../../api';
 import styles from './NewSongForm.module.css';
 import formsStyles from '../../../styles/components/forms.module.css';
-import { uploadIcon } from '../../../assets';
-import classNames from 'classnames';
-import { useFormik } from 'formik';
-import { initialValues, validationSchema } from './NewSongForm.data';
-import { useDropzone } from 'react-dropzone';
-import { Album, Storage, Song } from '../../../api';
-import { v4 as uuidv4 } from 'uuid';
- 
+import { uploadIcon } from '../../../assets'; 
+
 
 const albumControl = new Album();
 const storageControl = new Storage();
@@ -16,17 +16,18 @@ const songControl = new Song();
 
 export function NewSongForm(props) {
 
+  // Form, Check and Upload
   const formik = useFormik({
+    // Using 'Yup' to validate Form
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
+    // Submit Form Controller
     onSubmit: async (formValues) => {
         try {
-            // Cargar datos y facilitar su uso
             const { file, album, name } = formValues;
-            // Subir imagen al storage en la carpeta "artist" y con su id correspondiente
+            // Firebase Storage Folder "song"
             const response = await storageControl.uploadFile(file, "song", uuidv4());
-            // Obtener URL
             const url = await storageControl.getUrlFile(response.metadata.fullPath);
             await songControl.create(url, album, name);
             props.closeModal();
@@ -36,7 +37,8 @@ export function NewSongForm(props) {
     }
   })
 
-  // Cargar Canción
+
+  // Load Song File
   const [songName, setSongName] = useState("Nombre del archivo");
 
   const onDrop = useCallback(async (acceptedFile) => {
@@ -48,8 +50,8 @@ export function NewSongForm(props) {
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-
-  // Cargar Albumes
+  
+  // Load All Albums
   const [selectAlbum, setSelectAlbum] = useState([]);
 
   useEffect(() => {
@@ -63,30 +65,30 @@ export function NewSongForm(props) {
     }) ()
   }, []);
 
-
+  
   return (
     <form onSubmit= { formik.handleSubmit }>
 
       <div 
           className={ classNames( styles.image,
-              { [ styles.errorSong ] : formik.errors.file, }
+              { [ formsStyles.errorImage ] : formik.errors.file, }
           ) } 
           { ...getRootProps() }
       >
         <input { ...getInputProps() }/>
         <img 
+          className={ styles.uploadFile }
           src={ uploadIcon } 
-          className={ styles.noSongFile } 
           alt="Subir canción"
         />
-        <span className={ styles.uploadText }> 
+        <span className={ formsStyles.uploadText }> 
           Haz click o arrastra una cancíon
           { songName && (<p className={ styles.songName }> { songName } </p>) } 
         </span>
       </div>  
 
 
-      <label className={ styles.label }>Albúm al que pertenece :</label>
+      <label className={ formsStyles.label }>Albúm al que pertenece :</label>
       <select 
         className={ `${ formsStyles.input } ${ formsStyles.dropdown }` }
         name="album"

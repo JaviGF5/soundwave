@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useFormik } from 'formik';
+import { useDropzone } from 'react-dropzone';
+import classNames from 'classnames';
+import { initialValues, validationSchema } from './NewAlbumForm.data';
+import { Artist, Album, Storage } from '../../../api';
 import styles from './NewAlbumForm.module.css';
 import formsStyles from '../../../styles/components/forms.module.css';
-import classNames from 'classnames';
 import { errorImage } from '../../../assets';
-import { Artist, Album, Storage } from '../../../api';
-import { v4 as uuidv4 } from 'uuid';
-import { map } from 'lodash';
-import { useFormik } from 'formik';
-import { initialValues, validationSchema } from './NewAlbumForm.data';
-import { useDropzone } from 'react-dropzone';
 
 
 const artistControl = new Artist();
@@ -17,13 +16,17 @@ const storageControl = new Storage();
 
 export function NewAlbumForm(props) {
 
+    // Form, Check and Upload
     const formik = useFormik({
+        // Using 'Yup' to validate Form
         initialValues: initialValues(),
         validationSchema: validationSchema(),
         validateOnChange: false,
+        // Submit Form Controller
         onSubmit: async (formValues) => {
             try {
                 const {name, file, artist } = formValues;
+                // Firebase Storage Folder "album"
                 const response = await storageControl.uploadFile(file, "album", uuidv4());
                 const url = await storageControl.getUrlFile(response.metadata.fullPath);
                 await albumControl.create(url, name, artist);
@@ -34,7 +37,8 @@ export function NewAlbumForm(props) {
         }
     });
 
-    // Cargar Imagen
+
+    // Load Form Image
     const [photo, setPhoto] = useState(null);
 
     const onDrop = useCallback(async (acceptedFile) => {
@@ -42,13 +46,13 @@ export function NewAlbumForm(props) {
         setPhoto(URL.createObjectURL(file));
         formik.setFieldValue("file", file);
     });
+
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
 
-
+    // Load All Artists
     const [selectArtist, setSelectArtists] = useState([]);
 
-    // Cargar artistas
     useEffect(() => {
         (async () => {
             try {
@@ -60,28 +64,29 @@ export function NewAlbumForm(props) {
         }) ()
     }, []);
 
+    
   return (
     <form onSubmit= { formik.handleSubmit }>
 
        <div 
             className={ classNames( styles.image,
-                { [ styles.errorImage ] : formik.errors.file, }
+                { [ formsStyles.errorImage ] : formik.errors.file, }
             )}
             { ...getRootProps() }
         >
             <input { ...getInputProps() }/>
             <img 
-                src={ photo || errorImage } 
                 className={ classNames( styles.noPhoto,
                     { [ styles.photo ] : photo }
-                )} 
+                )}                
+                src={ photo || errorImage } 
                 alt="Foto de usuario"
             />
-            <p className={ styles.uploadImage }> Haz click o arrastra una imagen </p>
+            <p className={ formsStyles.uploadText }> Haz click o arrastra una imagen </p>
         </div> 
 
 
-        <label className={ styles.label }>Autor del albúm :</label>
+        <label className={ formsStyles.label }>Autor del albúm :</label>
         <select 
             className={ `${ formsStyles.input } ${ formsStyles.dropdown }` }
             name="artist"
@@ -93,7 +98,7 @@ export function NewAlbumForm(props) {
             <option value="" disabled> -- Seleccionar --</option>
             {
                 selectArtist.map(artist => (
-                    <option key={artist.id} value={artist.id}>
+                    <option key={ artist.id } value={ artist.id }>
                         {artist.name}
                     </option>
                 ))
@@ -122,6 +127,7 @@ export function NewAlbumForm(props) {
                 <p className={ formsStyles.error }> { formik.errors.name } </p> : 
                 null 
             } 
+
 
         <button className={ formsStyles.button } type="submit">
             REGISTRAR ALBÚM

@@ -10,7 +10,7 @@ export function PlayerProvider(props) {
     const [playing, setPlaying] = useState(null);
     const [volume, setVolume] = useState(1);
 
-    // Reproducir canción
+    // Play Song Control
     const startPlay = (songData, songImageData) => {
         setSong(songData);
         setSongImage(songImageData);
@@ -25,15 +25,16 @@ export function PlayerProvider(props) {
         startPlay,
         pause,
         resume,
-        setVolume,
-
         song,
         songImage,
         playing,
+        setVolume,
         volume,
     };
 
     return (
-        <PlayerMusicContext.Provider value={ data }> { props.children } </PlayerMusicContext.Provider>
+        <PlayerMusicContext.Provider value={ data }> 
+            { props.children } 
+        </PlayerMusicContext.Provider>
     )
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { map } from 'lodash';
 import { Link } from 'react-router-dom';
-import styles from './Slider.module.css';
-import { playerIcon } from '../../../assets';
-import { leftArrow, rightArrow } from '../../../assets';
 import { usePlayer } from '../../../hooks';
+import styles from './Slider.module.css';
+import { playerIcon, leftArrow, rightArrow } from '../../../assets';
 
+// Library Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -20,30 +20,23 @@ export function Slider(props) {
 
   const { startPlay } = usePlayer();
 
-  
 
   return (
     <>
-
       <Swiper
         modules={ [EffectCoverflow, Pagination, Navigation, Autoplay] } 
         slidesPerView={'auto'}
         spaceBetween={10}
         grabCursor={ true }
         centeredSlides={ true }
-
         effect={'coverflow'}
         coverflowEffect={{
-          rotate: 0,
+          rotate: 10,
           stretch: 0,
-          depth: 50,
-          modifier: 4,
+          depth: 100,
+          modifier: 2,
           slideShadows : false,
         }} 
-
-        // loop={ true }
-        // loopedSlides={2}
-
         pagination={{ 
           clickable: true 
         }}
@@ -65,24 +58,22 @@ export function Slider(props) {
         }}
         autoplay={{
           delay: 3000,
-      }}
+        }}
       >
         
         {map(data, (item) => {
-
-
           return (                 
             <SwiperSlide key={ item.id } className={ styles.slide }>
               
               <Link 
-                to={ basePath !== 'blockRoute' ? `/${basePath }/${ item.id }` : null } 
+                to={ basePath !== 'blockRoute' ? `/${ basePath }/${ item.id }` : null } 
                 className={ styles.item } 
               > 
-                <div className={ styles.image } style={ {backgroundImage: `url(${ item.image })`} } />
+                <div className={ styles.image } style={{ backgroundImage: `url(${ item.image })` }} />
                 <img 
+                  className={ styles.playerIcon } 
                   src={ playerIcon } 
                   alt="Reproducir Música" 
-                  className={ styles.playerIcon } 
                   onClick={ () => startPlay(item, item.image) }
                 />   
                 
@@ -96,25 +87,22 @@ export function Slider(props) {
 
       </Swiper>       
    
-      <button className={ styles.buttonLeft }>
+      <button className={ styles.navigation }>
         <img 
+          className={ `arrow-left-slider ${ styles.icon }` } 
           src={ leftArrow } 
           alt="Ir a la izquierda" 
-          className={ `arrow-left-slider ${ styles.icon }`} 
         />
       </button>
  
-      <button className={ styles.buttonRight }>
+      <button className={ styles.navigation }>
         <img 
+          className={ `arrow-right-slider ${ styles.icon }` }
           src={ rightArrow } 
           alt="Ir a la derecha" 
-          className={ `arrow-right-slider ${ styles.icon }` }
         />
-      </button>  
+      </button> 
 
     </>
   );
 }
-
-
-

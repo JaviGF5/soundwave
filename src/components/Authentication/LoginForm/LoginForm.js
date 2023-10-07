@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import { Auth } from '../../../api';
+import { initialValues, validationSchema } from './LoginForm.data';
 import styles from './LoginForm.module.css';
 import authStyles from '../../../styles/components/authentication.module.css';
 import formsStyles from '../../../styles/components/forms.module.css'
-import { Auth } from '../../../api/authentication';
-import { useFormik } from 'formik';
-import { initialValues, validationSchema } from './LoginForm.data';
 import { showIcon, noShowIcon } from '../../../assets';
+
 
 const auth = new Auth();
 
 export function LoginForm(props) {
 
-  const { goRegister, goAuth } = props; 
-
   const [showPassword, setShowPassword] = useState(false); 
   
+  // Form, Check and Upload
   const formik = useFormik({
-    initialValues: initialValues(),                       // Trasmisión de 'values' de los inputs
-    validationSchema: validationSchema(),                 // Propiedades y requisitos de la validación de Yup
-    validateOnChange: false,                              // Validar el formulario cuando se envíe 
-    onSubmit: async (formValues) => {                     // Controlador de envíos de formularios
+    // Using 'Yup' to validate Form
+    initialValues: initialValues(),                       
+    validationSchema: validationSchema(),                 
+    validateOnChange: false,
+    // Submit Form Controller                            
+    onSubmit: async (formValues) => {                     
       try {
         await auth.login(formValues.email, formValues.password);
       } catch (error) {
@@ -28,12 +30,12 @@ export function LoginForm(props) {
     },
   });
 
+  
   return (
     <div className={ authStyles.cards }>
       
-      <h2 className={ authStyles.title }>Iniciar Sesión</h2>
-
-      
+      <h2 className={ authStyles.title }> Iniciar Sesión </h2>
+    
       <form onSubmit={ formik.handleSubmit }>
 
         <div className={ formsStyles.inputContent }>
@@ -48,12 +50,12 @@ export function LoginForm(props) {
             value={ formik.values.email }
           />
         </div>
-
           { 
             formik.touched.email && formik.errors.email ? 
             <p className={ formsStyles.error }> { formik.errors.email } </p> : 
             null 
           }
+
 
         <div className={ formsStyles.inputContent }>
           <input 
@@ -66,7 +68,7 @@ export function LoginForm(props) {
             onChange={ formik.handleChange }
             value={ formik.values.password }
           />  
-          <div className={ formsStyles.iconContent } onClick={() => setShowPassword(!showPassword)}>
+          <div className={ formsStyles.iconContent } onClick={ () => setShowPassword(!showPassword) }>
             { 
               showPassword ? 
               <img src={ noShowIcon } alt='mostrar constraseña' /> :
@@ -74,34 +76,32 @@ export function LoginForm(props) {
             } 
           </div>
         </div>  
-            {
-              formik.touched.password && formik.errors.password ? 
-              ( <p className={formsStyles.error}>{formik.errors.password}</p>) : 
+          {
+            formik.touched.password && formik.errors.password ? 
+            ( <p className={ formsStyles.error }> { formik.errors.password } </p>) : 
 
-              formik.touched.password && formik.validateOnChange === false ? 
-              ( <p className={formsStyles.error}>*Contraseña incorrecta</p> ) :
+            formik.touched.password && formik.validateOnChange === false ? 
+            ( <p className={ formsStyles.error }> *Contraseña incorrecta </p> ) :
 
-              null
-            }  
+            null
+          }  
 
-        <button 
-          className={ formsStyles.button }
-          type="submit"
-        >INICIAR SESIÓN</button>
+
+        <button className={ formsStyles.button } type="submit"> 
+          INICIAR SESIÓN 
+        </button>
 
       </form>
 
-   
-      
-        <p className={ styles.textInfo }>¿No tienes cuenta? 
-        <span className={ styles.textLink } onClick={ goRegister }> REGÍSTRATE </span>
-         de forma sencilla.</p>
+      <p className={ styles.textInfo }>¿No tienes cuenta? 
+        <span className={ styles.textLink } onClick={ props.goRegister }> REGÍSTRATE </span>
+        de forma sencilla.
+      </p>
         
        <div className={ styles.contentButton }>
-        <button className={ authStyles.button }onClick={ goAuth }>Atrás</button>
+        <button className={ authStyles.button } onClick={ props.goAuth }> ATRÁS </button>
       </div>    
         
-
     </div>
   )
 }

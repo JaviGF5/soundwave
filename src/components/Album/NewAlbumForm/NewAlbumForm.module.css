@@ -10,17 +10,11 @@
     background-color: var(--background-one);
     cursor: pointer;
     transition: 0.5s;
-}
-    .image:hover {
+
+    &:hover {
         opacity: 0.5;
         background-color: transparent;
     }
-
-
-.errorImage {
-    box-sizing: border-box;
-    border: 2px solid var(--error-color);
-    box-shadow: 0px 0px 10px var(--error-color) inset;
 }
 
 .noPhoto {
@@ -34,15 +28,4 @@
     max-height: 220px;
     padding: 0;
     opacity: 1; 
-}
-
-.label {
-    font-family: var(--font-family-text);
-    letter-spacing: 0.5px;
-}
-
-.uploadImage {
-    font-family: var(--font-family-text);
-    padding: 0;
-    margin: 0;
 }

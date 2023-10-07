@@ -1,7 +1,7 @@
-/* Estructura General de la APP - layouts */
+/* Global APP Structure - layouts */
 
 :root {
     --nav-height: 60px;
-    --footer-height: 90px;
+    --footer-height: 100px;
     --left-bar-with: 260px;
 }

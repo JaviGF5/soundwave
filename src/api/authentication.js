@@ -1,8 +1,9 @@
-// Registrar usuario en Firebase
-import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth';
+
 
 export class Auth {
-    // Función de registro de Firebase (cambiar en caso de cambiar de servidor)
+
+    // Register User
     async register(email, password) {
         try {
             const auth = getAuth();
@@ -12,6 +13,7 @@ export class Auth {
         }
     };
 
+    // Sing out User
     async logout() {
         try {
             const auth = getAuth();
@@ -21,6 +23,7 @@ export class Auth {
         }
     };
 
+    // Login User
     async login(email, password) {
         try {
             const auth = getAuth();

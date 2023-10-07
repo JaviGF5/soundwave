@@ -1,68 +1,77 @@
 @import '../../styles';
 
 
-.page { 
+.content { 
     display: grid;
     place-items: center;
     min-height: 100vh;
     background-color: var(--background-one);
-}
 
-.card {
-    display: grid;
-    place-items: center;
-    width: 400px;
-    padding-top: 50px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background-color: var(--background-two);
-    border-radius: 20px;
-    z-index: 2;
-}
-
-.logoAuth {
-    display: grid;
-    place-items: center;
-    width: 80%;
-    transition: 0.5s;
-    filter: drop-shadow(0px 0px 0px  var(--basic-two));
-}
-    .logoAuth:hover{
-        filter: drop-shadow(0px 0px 5px var(--basic-two));
-    }
-
-/* Animación de onda */ 
-.circleAnimation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 94vh;
-    aspect-ratio: 1/1;
-}
-    .circleAnimation::before {
-        content: '';
+    .circleAnimation {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 50%;
-        animation: animateNeon 6s linear infinite; 
-    }
-    .circleAnimation::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        animation: animateNeon 6s linear infinite;
-        animation-delay: 3s; 
+        height: 94vh;
+        aspect-ratio: 1/1;
+
+        &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                animation: animateNeon 6s linear infinite;
+            }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: animateNeon 6s linear infinite;
+            animation-delay: 3s;
+        }
     }
 
+    .card {
+        display: grid;
+        place-items: center;
+        width: 400px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: var(--background-two);
+        border-radius: 20px;
+        z-index: 2;
+
+        .logoAuth {
+            display: grid;
+            place-items: center;
+            width: 80%;
+            transition: 0.5s;
+            filter: drop-shadow(0px 0px 0px  var(--basic-two));
+            
+            &:hover{
+                filter: drop-shadow(0px 0px 5px var(--basic-two));
+            }
+        }
+    }
+
+    .InfoButton {
+        position: fixed;
+        top: 80%;
+        left: 90%;
+        z-index: 10;
+    }
+}
+
+
+/* Animation */
 @keyframes animateNeon {
     0% {
         width: 0%;

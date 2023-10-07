@@ -8,9 +8,9 @@ const albumControl = new Album();
 
 export function Albums() {
 
+  // Load Albums
   const [albums, setAlbums] = useState([]);
 
-  // Cargar albumes
   useEffect(() => {
     (async () => {
       try {
@@ -26,7 +26,7 @@ export function Albums() {
   return (
     <div className={ styles.content }>
       
-      <h1>Albumes</h1>
+      <h2 className={ styles.title }> Albumes </h2>
       <ListAlbums albums={ albums }/>
       
     </div>

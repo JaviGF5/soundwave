@@ -1,14 +1,16 @@
 import React from 'react';
 import { LeftMenu, TopNav, Footer  } from '../../components/Layout';
 import styles from './LoggedLayout.module.css';
+import { InfoButton } from '../../components/Shared/InfoButton/InfoButton';
 
 
 export function LoggedLayout(props) {
 
   const { children } = props;
 
+  
   return (
-    <div className={ styles.contentGeneral }>
+    <div className={ styles.content }>
 
       <div className={ styles.layoutContent }>
 
@@ -27,6 +29,10 @@ export function LoggedLayout(props) {
         </div>
       </div>
 
+      <div className={ styles.InfoButton }>
+        <InfoButton />
+      </div>
+      
       <div className={ styles.footer }>
         <Footer />
       </div>
