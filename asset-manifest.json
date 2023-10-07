@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/soundwave/static/css/main.6384469b.css",
+    "main.js": "/soundwave/static/js/main.cfb31a03.js",
+    "static/js/787.fadc5591.chunk.js": "/soundwave/static/js/787.fadc5591.chunk.js",
+    "static/media/NeutraTextBook.otf": "/soundwave/static/media/NeutraTextBook.794f7defd77f3e1c0db9.otf",
+    "static/media/NeutraTextBold.otf": "/soundwave/static/media/NeutraTextBold.f2c4fd968da4f4710241.otf",
+    "static/media/soundwave-logo-grey.png": "/soundwave/static/media/soundwave-logo-grey.893ff345d9744550d729.png",
+    "static/media/soundwave-logo-white.png": "/soundwave/static/media/soundwave-logo-white.7e4a5b148ad320a66eac.png",
+    "static/media/soundwave-logo-black.png": "/soundwave/static/media/soundwave-logo-black.38ac7bdefab326e0b853.png",
+    "static/media/upload-ico-white.svg": "/soundwave/static/media/upload-ico-white.d17a2700ccbc920e8fa9f0a5b23e505a.svg",
+    "static/media/error-no-image-ico-white.svg": "/soundwave/static/media/error-no-image-ico-white.0fcba2dca08a194614e6d964b5d5c26c.svg",
+    "static/media/show-no-password-2.svg": "/soundwave/static/media/show-no-password-2.17486f70cdbec24ace0c8c8fb7007da5.svg",
+    "static/media/artist-ico-white.svg": "/soundwave/static/media/artist-ico-white.d2731918c55a18f13bd1dd94a021cb7b.svg",
+    "static/media/user-ico-white.svg": "/soundwave/static/media/user-ico-white.b42de2d9510b891c3edf8c6096f63f3b.svg",
+    "static/media/album-ico-white.svg": "/soundwave/static/media/album-ico-white.3b2e5ef1d1849be563efdf3a5bad3e11.svg",
+    "index.html": "/soundwave/index.html",
+    "static/media/show-password.svg": "/soundwave/static/media/show-password.18163c616d6bd8fa5174fa4374e067ef.svg",
+    "static/media/turn-off-ico-white.svg": "/soundwave/static/media/turn-off-ico-white.36471eab31a5f1a1b39fbc919d0d15d9.svg",
+    "static/media/home-ico-white.svg": "/soundwave/static/media/home-ico-white.0bedb757ee95c15515fc83b372de94a1.svg",
+    "static/media/player-ico-white-2.svg": "/soundwave/static/media/player-ico-white-2.09114c5f55450377271717a42b2af31d.svg",
+    "static/media/arrow-left-ico-white-3.svg": "/soundwave/static/media/arrow-left-ico-white-3.aaafc1f416e8153e1acf3654ebc7ada7.svg",
+    "static/media/arrow-right-ico-white-3.svg": "/soundwave/static/media/arrow-right-ico-white-3.383d885958cb3b9f4e2177a9ffc42fba.svg",
+    "static/media/arrow-right-ico-white-2.svg": "/soundwave/static/media/arrow-right-ico-white-2.352b5d802bb5ecc2aaa6ae5785f9471f.svg",
+    "static/media/arrow-left-ico-white-2.svg": "/soundwave/static/media/arrow-left-ico-white-2.c81cada78bfef46c520f878c019e0e8d.svg",
+    "static/media/pause-ico-white-2.svg": "/soundwave/static/media/pause-ico-white-2.f01af5648d22e9935eac18a1a9ac9984.svg",
+    "static/media/add-ico-white.svg": "/soundwave/static/media/add-ico-white.be56c890bfdc8dd1c572b260e5a1a302.svg",
+    "main.6384469b.css.map": "/soundwave/static/css/main.6384469b.css.map",
+    "main.cfb31a03.js.map": "/soundwave/static/js/main.cfb31a03.js.map",
+    "787.fadc5591.chunk.js.map": "/soundwave/static/js/787.fadc5591.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6384469b.css",
+    "static/js/main.cfb31a03.js"
+  ]
+}
