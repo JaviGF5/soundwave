@@ -1,7 +1,7 @@
-import { doc, setDoc, collection, getDocs, getDoc, where, query, orderBy, limit } from 'firebase/firestore';
-import { v4 as uuidv4 } from 'uuid';
-import { db } from '../utils';
-import { map } from 'lodash';
+// import { doc, setDoc, collection, getDocs, getDoc, where, query, orderBy, limit } from 'firebase/firestore';
+// import { v4 as uuidv4 } from 'uuid';
+// import { db } from '../utils';
+// import { map } from 'lodash';
 
 
 // export class Album {
