@@ -79,10 +79,6 @@ export function LoginForm(props) {
           {
             formik.touched.password && formik.errors.password ? 
             ( <p className={ formsStyles.error }> { formik.errors.password } </p>) : 
-
-            formik.touched.password && formik.validateOnChange === false ? 
-            ( <p className={ formsStyles.error }> *Contraseña incorrecta </p> ) :
-
             null
           }  
 
