@@ -119,9 +119,7 @@
     }
     .InfoButton {
         position: absolute;
-        top: 80%;
         left: 80%;
-        z-index: 10;
     }
 }
 
