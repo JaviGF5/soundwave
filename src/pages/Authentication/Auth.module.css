@@ -63,7 +63,7 @@
     }
 
     .InfoButton {
-        position: fixed;
+        position: absolute;
         top: 80%;
         left: 90%;
         z-index: 10;
@@ -106,4 +106,23 @@
             0 0 40px var(--basic-two) inset;
         opacity: 0;
     }
-}          
+}     
+
+/* Responsive */
+@media (max-width: 768px) {
+
+.content {
+    .card {
+        width: 90%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+    .InfoButton {
+        position: absolute;
+        top: 80%;
+        left: 80%;
+        z-index: 10;
+    }
+}
+
+}
