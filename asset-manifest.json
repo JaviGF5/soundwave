@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/soundwave/static/css/main.6384469b.css",
-    "main.js": "/soundwave/static/js/main.cfb31a03.js",
+    "main.css": "/soundwave/static/css/main.dbfb2d2d.css",
+    "main.js": "/soundwave/static/js/main.7ccf17e3.js",
     "static/js/787.fadc5591.chunk.js": "/soundwave/static/js/787.fadc5591.chunk.js",
     "static/media/NeutraTextBook.otf": "/soundwave/static/media/NeutraTextBook.794f7defd77f3e1c0db9.otf",
     "static/media/NeutraTextBold.otf": "/soundwave/static/media/NeutraTextBold.f2c4fd968da4f4710241.otf",
@@ -25,12 +25,12 @@
     "static/media/arrow-left-ico-white-2.svg": "/soundwave/static/media/arrow-left-ico-white-2.c81cada78bfef46c520f878c019e0e8d.svg",
     "static/media/pause-ico-white-2.svg": "/soundwave/static/media/pause-ico-white-2.f01af5648d22e9935eac18a1a9ac9984.svg",
     "static/media/add-ico-white.svg": "/soundwave/static/media/add-ico-white.be56c890bfdc8dd1c572b260e5a1a302.svg",
-    "main.6384469b.css.map": "/soundwave/static/css/main.6384469b.css.map",
-    "main.cfb31a03.js.map": "/soundwave/static/js/main.cfb31a03.js.map",
+    "main.dbfb2d2d.css.map": "/soundwave/static/css/main.dbfb2d2d.css.map",
+    "main.7ccf17e3.js.map": "/soundwave/static/js/main.7ccf17e3.js.map",
     "787.fadc5591.chunk.js.map": "/soundwave/static/js/787.fadc5591.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6384469b.css",
-    "static/js/main.cfb31a03.js"
+    "static/css/main.dbfb2d2d.css",
+    "static/js/main.7ccf17e3.js"
   ]
 }
